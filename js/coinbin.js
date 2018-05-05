@@ -128,16 +128,12 @@ $(document).ready(function() {
 		}
 
 		var total = (devamount.val()*1) + (txfee.val()*1);
-		console.log("Total wallet confirm");
-		console.log(total);
 
 		$.each($("#walletSpendTo .output"), function(i,o){
 			var addr = $('.addressTo',o);
 			var amount = $('.amount',o);
 			if(amount.val()*1>0){
 				total += amount.val()*1;
-				console.log("Adding output");
-				console.log(amount.val()*1);
 				tx.addoutput(addr.val(), amount.val()*1);
 			}
 		});
@@ -146,7 +142,6 @@ $(document).ready(function() {
 
 		var script = false;
 		if($("#walletSegwit").is(":checked")){
-			console.log("OLI SEGWIT")
 			var sw = coinjs.segwitAddress($("#walletKeys .pubkey").val());
 			script = sw.redeemscript;
 		}
@@ -157,35 +152,18 @@ $(document).ready(function() {
 		}
 
 		tx.addUnspent($("#walletAddress").html(), function(data){
-			console.log("ADDUNSPEND joinbin.js")
-			console.log(data);
 			var dvalue = (data.value/100000000).toFixed(8) * 1;
-			console.log(dvalue);
 			total = (total*1).toFixed(8) * 1;
 
 			if(dvalue>=total){
-				console.log("MEIL ON");
-				console.log(dvalue);
-				console.log("HALUTAA LÄHETTÄÄ");
-				console.log(total);
 				var change = dvalue-total;
-				console.log("CHANGE")
-				console.log(change)
 				if((change*1)>0){
-					console.log("LISÄTÄÄ OUTPUTTI");
 					tx.addoutput($("#walletAddress").html(), change);
 				}
 
 				// clone the transaction with out using coinjs.clone() function as it gives us trouble
-				console.log("TEHÄÄ KLOONI TRANSAKTIOSTA?")
 				var tx2 = coinjs.transaction();
 				var txunspent = tx2.deserialize(tx.serialize());
-
-				console.log("tx serialisoituna");
-				console.log(tx.serialize());
-				console.log(tx2);
-				console.log(txunspent);
-				console.log("SIGNADATAAN UNSPENDIT")
 				// then sign
 				// Add inputvalues
                 //tx2.completeInputValues();
@@ -238,8 +216,6 @@ $(document).ready(function() {
 		}
 
 		var total = (devamount.val()*1) + (txfee.val()*1)
-		console.log("221, coinbin.js");
-		console.log(total);
 
 		$.each($("#walletSpendTo .output"), function(i,o){
 			var amount = $('.amount',o);
@@ -1146,7 +1122,7 @@ $(document).ready(function() {
 						if(data[i].confirmations == 0) {
 							continue;
 						}
-						console.log("NUP");
+
 						var o = data[i];
 						var tx = o.txid;
 						if(tx.match(/^[a-f0-9]+$/)){

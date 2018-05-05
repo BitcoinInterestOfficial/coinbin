@@ -51,7 +51,7 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a href="#home" class="navbar-brand" id="homeBtn"><img src="images/coinbin.gif" style="height:40px;margin-top:-10px"></a>
+						<a href="#home" class="navbar-brand" id="homeBtn"><img src="https://www.bitcoininterest.io/assets/images/bitcoin-coin-withtext-1-6491x1200.png" style="height:40px;margin-top:-10px"></a>
 					</div>
 					<div class="collapse navbar-collapse">
 						<ul class="nav navbar-nav">
@@ -119,10 +119,10 @@
 						</div>
 
 						<div class="row">
-<!--                            <div class="col-md-4">-->
-<!--                                <h3><span class="glyphicon glyphicon-piggy-bank"></span> Wallet</h3>-->
-<!--                                <p>Quick access to an <a href="#wallet">online wallet</a> where only you have access to your own private keys!</p>-->
-<!--                            </div>-->
+                            <div class="col-md-4">
+                                <h3><span class="glyphicon glyphicon-piggy-bank"></span> Wallet</h3>
+                                <p>Quick access to an <a href="#wallet">online wallet</a> where only you have access to your own private keys!</p>
+                            </div>
 
 							<div class="col-md-4">
 								<h3><span class="glyphicon glyphicon-globe"></span> Addresses</h3>
@@ -157,14 +157,14 @@
 										<div>
 											<a href="javascript:;" class="optionsCollapse"><div class="well well-sm"><span class="glyphicon glyphicon-collapse-down" id="glyphcollapse"></span> Advanced Options</div></a>
 											<div class="hidden optionsAdvanced">
-												<label>Segregated Witness Address</label>
+												<!--<label>Segregated Witness Address</label>
 												<p class="checkbox">
 													<label><input type="checkbox" id="walletSegwit" class="checkbox-inline"> Use a segwit address instead of a regular address. <span class="text-muted"><i>(recommended)</i></span></label></label>
-												</p>
+												</p>-->
 
 												<label>Enable Replace by Fee (RBF)</label>
 												<p class="checkbox">
-													<label><input type="checkbox" id="walletRBF" class="checkbox-inline"> Enable RBF on all transactions, allowing you to manually raise the transaction fee later if required. <span class="text-muted"><i>(recommended)</i></span></label></label>
+													<label><input type="checkbox" id="walletRBF" class="checkbox-inline" checked> Enable RBF on all transactions, allowing you to manually raise the transaction fee later if required. <span class="text-muted"><i>(recommended)</i></span></label></label>
 												</p>
 											</div>
 										</div>
@@ -185,13 +185,13 @@
 												<span id="walletLoader" class="hidden"><img src="images/loader.gif"></span>
 												<span id="walletAddress"></span> 
 
-												<div class="btn-group">
+												<!--<div class="btn-group">
 													<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" id="walletToBtn">SegWit <span class="caret"></span></button>
 													<ul class="dropdown-menu">
 														<li><a href="javascript:;" id="walletToSegWit">SegWit</a></li>
 														<li><a href="javascript:;" id="walletToLegacy">Legacy</a></li>
 													</ul>
-												</div>
+												</div>-->
 											</div>
 											<br>
 											<div style="text-align:center; width:350px;">
@@ -199,7 +199,6 @@
 													<li role="presentation" class="active"><a href="javascript:;" id="walletBalance">0.00 BTC</a></li>
 													<li role="presentation"><a href="javascript:;" id="walletShowSpend">Spend</a></li>
 													<li role="presentation"><a id="walletHistory" href="javascript:;" target="_blank">History</a></li>
-													<li role="presentation"><a href="https://localbitcoins.com/?ch=173j" target="_blank">Buy</a></li>
 													<li role="presentation"><a href="javascript:;" id="walletShowKeys">Keys</a></li>
 												</ul>
 
@@ -1299,8 +1298,7 @@
 						<h2>About <small>open source bitcoin wallet</small></h2>
 						<p>Version 1.3</p>
 						<p>Compatible with bitcoin-qt</p>
-						<p>Github <a href="https://github.com/poolgold/coinbin/">https://github.com/poolgold/coinbin/</a></p>
-						<p>TOR <a href="http://4zpinp6gdkjfplhk.onion">4zpinp6gdkjfplhk.onion</a></p>
+						<p>Github <a href="https://github.com/fellu/coinbin/">https://github.com/poolgold/coinbin/</a></p>
 						<h3>What is Bitcoin?</h3>
 						<p>Bitcoin is a type of digital currency in which encryption techniques are used to regulate the generation of units of currency and verify the transfer of funds, operating independently of a central bank. See <a href="http://www.weusecoins.com/" target="_blank">weusecoins.com</a> for more information.</p>
 						<p>If you are looking to buy some Bitcoin try <a href="https://localbitcoins.com/?ch=173j" target="_blank">LocalBitcoins.com</a>.</p>
@@ -1325,13 +1323,7 @@
 								<p class="text-muted">Select which network you'd like to use for key pair generation.</p>
 								<select class="form-control" id="coinjs_coin">
 									<!-- rel 0:pub 1:priv 2:multisig 3:hdpub 4:hdprv 5:broadcast 6:utxo 7:forkspec -->
-									<option value="bitcoin_mainnet" rel="0x00;0x80;0x05;0x488b21e;0x488ade4;coinb.in;coinb.in">Bitcoin (mainnet)</option>
-									<option value="bgold_mainnet" rel="0x66;0x80;0x17;0x488b21e;0x488ade4;false;bitcoingold.org_bgoldmainnet;79">Bitcoin Gold (mainnet)</option>
-									<option value="dogecoin_mainnet" rel="0x1e;0x9e;0x16;0x0827421e;0x089944e4;chain.so_dogecoin;chain.so_dogecoin">Dogecoin (mainnet)</option>
-									<option value="carboncoin_mainnet" rel="0x2f;0xaf;0x05;0x488b21e;0x488ade4;cryptoid.info_carboncoin;cryptoid.info_carboncoin">Carboncoin (mainnet)</option>
-									<option value="shadowcash_mainnet" rel="0x3f;0xbf;0x7d;0xee80286a;0xee8031e8;false;false">ShadowCash (mainnet)</option>
-									<option value="bitcoin_testnet" rel="0x6f;0xef;0xc4;0x043587cf;0x04358394;false;false">Bitcoin (testnet)</option>
-
+									<option value="bgold_mainnet" rel="0x66;0x80;0x17;0x488b21e;0x488ade4;false;bitcoingold.org_bgoldmainnet;79">Bitcoin Interest (mainnet)</option>
 									<option value="custom" rel="0x00;0x80;0x05;0x488b21e;0x488ade4;false;false">Custom</option>
 								</select>
 							</div>

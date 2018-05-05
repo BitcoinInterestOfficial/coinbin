@@ -816,14 +816,10 @@
 
 		/* add an output to a transaction */
 		r.addoutput = function(address, value){
-			console.log("ADDING OUTPUT");
-			console.log(value);
 			var o = {};
 			o.value = new BigInteger('' + Math.round((value*1) * 1e8), 10);
 			var s = coinjs.script();
 			o.script = s.spendToScript(address);
-			console.log(o);
-			console.log("ADDED OUTPUT")
 			return this.outs.push(o);
 		}
 
@@ -902,7 +898,6 @@
 
                 for (var i = 0; i < tx_data.length; i++) {
                     if (tx_data[i].confirmations == 0) {
-                    	console.log("skipattiin ilman confirmaatiota ollut unspent");
                         continue;
                     }
 
@@ -913,7 +908,6 @@
                     var seq = sequence || false;
                     var value = tx_data[i].amount*100000000;
 
-					console.log(value);
 					self.addinput(txhash, n, scr, seq, value);
                     total_value += tx_data[i].amount*100000000;
                     total++;
@@ -922,7 +916,6 @@
 				//x.unspent = $(xmlDoc).find("unspent");
 				x.value = total_value;
 				x.total = total;
-				console.log(x);
 				return callback(x);
 			});
 		}
@@ -960,9 +953,7 @@
 		/* generate the transaction hash to sign from a transaction input */
 		r.transactionHash = function(index, sigHashType) {
 			if (coinjs.useForkId) {
-				console.log("USING FORKID 1");
 				var witnessSigHash = this.transactionHashSegWitV0(index, sigHashType);
-				console.log(witnessSigHash);
 				if (witnessSigHash['result'] == 1) {
 					return witnessSigHash['hash'];
 				} else {
@@ -1050,7 +1041,7 @@
 		r.transactionHashSegWitV0 = function(index, sigHashType){
 			// start redeem script check
 			var extract = this.extractScriptKey(index);
-			console.log("NUUP");
+
 			if(!coinjs.useForkId && extract['type'] != 'segwit'){
 				return {'result':0, 'fail':'txtype', 'response':'sighash-witnessv0 is only for sigwit when forkid is not enabled'};
 			}
@@ -1067,20 +1058,14 @@
 				var sz = coinjs.numToVarInt(scriptcode.length);
 				scriptcode = sz.concat(scriptcode);
 			}
-            console.log("NUUP2")
 
 			if(extract['value'] == -1){
 				return {'result':0, 'fail':'value', 'response':'unable to generate a valid segwit hash without a value'};				
 			}
 
-			console.log("NOT VALUE");
-
 			// end of redeem script check
-
 			var value = coinjs.numToBytes(extract['value'], 8);
-
 			// start
-
 			var zero = coinjs.numToBytes(0, 32);
 			var version = coinjs.numToBytes(parseInt(this.version), 4);
 
@@ -1099,8 +1084,8 @@
 					bufferTmp = bufferTmp.concat(coinjs.numToBytes(this.ins[i].sequence, 4));
 				}
 			}
-            console.log("NUUP3")
-			var hashSequence = bufferTmp.length >= 1 ? Crypto.SHA256(Crypto.SHA256(bufferTmp, {asBytes: true}), {asBytes: true}) : zero; 
+
+			var hashSequence = bufferTmp.length >= 1 ? Crypto.SHA256(Crypto.SHA256(bufferTmp, {asBytes: true}), {asBytes: true}) : zero;
 
 			var outpoint = Crypto.util.hexToBytes(this.ins[index].outpoint.hash).reverse();
 			outpoint = outpoint.concat(coinjs.numToBytes(this.ins[index].outpoint.index, 4));
@@ -1122,14 +1107,12 @@
 				bufferTmp = bufferTmp.concat(this.outs[index].script.buffer);
 				hashOutputs = Crypto.SHA256(Crypto.SHA256(bufferTmp, {asBytes: true}), {asBytes: true});
 			}
-            console.log("NUUP4")
+
 			var locktime = coinjs.numToBytes(this.lock_time, 4);
 			if (coinjs.useForkId) {
 				sigHashType |= 0x40;
 				sigHashType |= (coinjs.forkId << 8);
 			}
-
-			console.log("ALLIUP");
 			var sighash = coinjs.numToBytes(sigHashType, 4);
 
 			var buffer = []; 
@@ -1314,7 +1297,6 @@
 
 		/* sign a "standard" input */
 		r.signinput = function(index, wif, sigHashType){
-			console.log("SIGNINPUT standard")
 			var key = coinjs.wif2pubkey(wif);
 			var shType = sigHashType || 1;
 			var signature = this.transactionSig(index, wif, shType);
@@ -1438,11 +1420,7 @@
 
 		/* sign inputs */
 		r.sign = function(wif, sigHashType){
-			console.log("SIGN WITH:");
-			console.log(sigHashType);
 			var shType = sigHashType || 1;
-            console.log("SIGN REAL:");
-            console.log(shType);
 
             for (var i = 0; i < this.ins.length; i++) {
 				var d = this.extractScriptKey(i);
@@ -1450,9 +1428,6 @@
 				var w2a = coinjs.wif2address(wif);
 				var script = coinjs.script();
 				var pubkeyHash = script.pubkeyHash(w2a['address']);
-
-				console.log("TRYING TO SIGN");
-				console.log(d);
 
 				if(((d['type'] == 'scriptpubkey' && d['script']==Crypto.util.bytesToHex(pubkeyHash.buffer)) || d['type'] == 'empty') && d['signed'] == "false"){
 					this.signinput(i, wif, shType);
@@ -1615,8 +1590,6 @@
 		}
 
 		r.completeInputValues = function(txinputs){
-			console.log("COMPLETE INPUT VALUES");
-
 			function vinOutpoint(vin) { return vin.txid + ':' + vin.vout; }
 			function cbvinOutpoint(cvin) { return cvin.outpoint.hash + ':' + cvin.outpoint.index; }
 			var inputMap = {};
@@ -1633,7 +1606,6 @@
 					cvin.script = coinjs.script(Crypto.util.hexToBytes(vin.script));
 				}
 			}
-			console.log(this.ins);
 		};
 
 		r.size = function(){
