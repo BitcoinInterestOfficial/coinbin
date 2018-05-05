@@ -19,9 +19,8 @@
 	coinjs.compressed = false;
 
 	/* other vars */
-	coinjs.developer = 'GHri78iH9CfBbm79rfdXtCqjsiFhbKMwZd'; // bitcoin gold
+	coinjs.developer = 'i8LfuQQq78gZSPf5WRouEDGkWLuqicuTP8'; // BCI
 
-	/* bit(coinb.in) api vars */
 	coinjs.host = 'https://explorer.bitcoininterest.io/api/';
 	coinjs.uid = '1';
 	coinjs.key = '12345678901234567890123456789012';
@@ -928,27 +927,19 @@
 				self.sign(wif);
 				return callback(data);
 			});
-		}
+		};
 
 		/* broadcast a transaction */
 		r.broadcast = function(callback, txhex){
 			var tx = txhex || this.serialize();
             $.ajax ({
                 type: "POST",
-                url: coinjs.host+"tx/send/",
-                data: "rawtx: " + tx,
+                url: coinjs.host+'tx/send/',
+                data: {'rawtx':tx},
                 dataType: "json",
-                error: function(data) {
-					console.log(data)
-                },
-                success: function(data) {
-                    console.log(data)
-                },
                 complete: callback
             });
-
-            coinjs.ajax(coinjs.host+'?uid='+coinjs.uid+'&key='+coinjs.key+'&setmodule=bitcoin&request=sendrawtransaction&rawtx='+tx+'&r='+Math.random(), callback, "GET");
-		}
+		};
 
 		/* generate the transaction hash to sign from a transaction input */
 		r.transactionHash = function(index, sigHashType) {

@@ -17,9 +17,9 @@ coinbin
 
 A Open Source Browser Based Bitcoin Wallet. Version 1.3 beta by OutCast3k
 
-Live version available at http://btgwallet.online
+Live version available at https://wallet.bitcoininterest.io/
 
-Github URL: https://github.com/poolgold/coinbin
+Github URL: https://github.com/fellu/coinbin
 
 Coinb.in supports a number of key features such as: 
 

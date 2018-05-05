@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 
-		<title>Bitcoin Gold Wallet by BTGwallet.online</title>
+		<title>Bitcoin Interest WEB-Wallet</title>
 
 		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 		<meta name="keywords" content="bitcoin, wallet, multisig, multisignature, address, browser, segwit, javascript, js, broadcast, transaction, verify, decode" />
@@ -10,6 +10,7 @@
 
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="https://www.bitcoininterest.io/faveicon.png" type="image/x-icon">
 
 		<link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
 		<link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
@@ -55,6 +56,7 @@
 					</div>
 					<div class="collapse navbar-collapse">
 						<ul class="nav navbar-nav">
+							<li><a href="#wallet" data-toggle="tab"><span class="glyphicon glyphicon-briefcase"></span> Wallet</a></li>
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-plus"></span> New<b class="caret"></b></a>
 								<ul class="dropdown-menu">
@@ -70,11 +72,9 @@
 							<li><a href="#verify" data-toggle="tab"><span class="glyphicon glyphicon-ok"></span> Verify</a></li>
 							<li><a href="#sign" data-toggle="tab"><span class="glyphicon glyphicon-pencil"></span> Sign</a></li>
                             <li><a href="#broadcast" data-toggle="tab"><span class="glyphicon glyphicon-globe"></span> Broadcast</a></li>
-                            <li><a href="#wallet" data-toggle="tab"><span class="glyphicon glyphicon-briefcase"></span> Wallet</a></li>
-<!--                            <li><a href="#about" data-toggle="tab"><span class="glyphicon glyphicon-info-sign"></span> About</a></li>-->
-
-							<li><a href="#settings" data-toggle="tab"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
-							<li class="hidden"><a href="#fees" data-toggle="tab"><span class="glyphicon glyphicon-tag"></span> Fees</a></li>
+							<!--<li><a href="#fees" data-toggle="tab"><span class="glyphicon glyphicon-tag"></span> Fees</a></li>-->
+							<li><a href="https://explorer.bitcoininterest.io/" target="_blank"><span class="glyphicon glyphicon-link"></span> Explorer</a></li>
+							<li><a href="#about" data-toggle="tab"><span class="glyphicon glyphicon-info-sign"></span> About</a></li>
 						</ul>
 					</div>
 				</div>
@@ -95,7 +95,7 @@
 						<div class="jumbotron">
 							<h1>Online wallet creator</h1>
 
-							<p>Bitcoin Gold Edition. All the data is stored only on your browser. Don't forget to write down your keys before exit.</p>
+							<p>Bitcoin Interest Edition. All the data is stored only on your browser. Don't forget to write down your keys before exit.</p>
 <!--                            <p><a class="btn btn-primary btn-lg" href="#about" role="button">Learn more &raquo;</a></p>-->
 						</div>
 
@@ -109,7 +109,7 @@
 
 							<div class="col-md-4">
 								<h3><span class="glyphicon glyphicon-fullscreen"></span> MultiSig</h3>
-								<p>We offer a fully transparent <a href="#newMultiSig">multisig</a> solution which works seamlessly offline and with other bitcoin clients.</p>
+								<p>We offer a fully transparent <a href="#newMultiSig">multisig</a> solution which works seamlessly offline and with other Bitcoin Interest clients.</p>
 							</div>
 
                             <div class="col-md-4">
@@ -131,7 +131,7 @@
 
 							<div class="col-md-4">
 								<h3><span class="glyphicon glyphicon-wrench"></span>  Development</h3>
-								<p>Use what we've built to write your own projects! See our documention (coming soon), or contribute at <a href="https://github.com/poolgold/coinbin/">github</a>.</p>
+								<p>Use what we've built to write your own projects! See our documention (coming soon), or contribute at <a href="https://github.com/fellu/coinbin/">github</a>.</p>
 							</div>
 						</div>
 					</div>
@@ -139,7 +139,7 @@
 					<div class="tab-pane tab-content" id="wallet">
 						<div class="row">
 							<div class="col-md-12">
-								<h2>Open Wallet <small> browser based bitcoin wallet</small></h2>
+								<h2>Wallet <small> browser based Bitcoin Interest wallet</small></h2>
 								<div id="openLogin">
 									<form class="form-signin" role="form" action="javascript:;">
 
@@ -196,7 +196,7 @@
 											<br>
 											<div style="text-align:center; width:350px;">
 												<ul class="nav nav-pills" role="tablist">
-													<li role="presentation" class="active"><a href="javascript:;" id="walletBalance">0.00 BTC</a></li>
+													<li role="presentation" class="active"><a href="javascript:;" id="walletBalance">0.00 BCI</a></li>
 													<li role="presentation"><a href="javascript:;" id="walletShowSpend">Spend</a></li>
 													<li role="presentation"><a id="walletHistory" href="javascript:;" target="_blank">History</a></li>
 													<li role="presentation"><a href="javascript:;" id="walletShowKeys">Keys</a></li>
@@ -242,13 +242,11 @@
 													<div class="row" id="walletSpendTo">
 														<div class="form-horizontal output">
 															<div class="col-xs-8">
-																<input type="text" class="form-control addressTo" data-original-title="" title="" value="iMt2SZCqoNTBr6QtvPLzsu2sfWtdZKR9dF">
+																<input type="text" class="form-control addressTo" data-original-title="" title="" value="">
 															</div>
 															<div class="col-xs-3">
-																<input type="text" class="form-control amount" data-original-title="" title="" placeholder="0.00" value="0.096">
-
+																<input type="text" class="form-control amount" data-original-title="" title="" placeholder="0.00">
 															</div>
-
 															<a href="javascript:;" class="addressAdd"><span class="glyphicon glyphicon-plus"></span></a>
 															<br><br>
 														</div>
@@ -256,7 +254,7 @@
 													<div class="row">
 														<div class="col-xs-6">
 															<label><abbr title="the amount to pay in network miner fee">Transaction Fee</abbr>&nbsp;&nbsp;<a href="javascript:;" id="feesestwallet"><span class="glyphicon glyphicon-question-sign"></span></a></label>
-															<input type="text" class="form-control" value="0.001" id="txFee">
+															<input type="text" class="form-control" value="0.0002" id="txFee">
 														</div>
 														<div class="col-xs-5">
 															<label><abbr title="the amount to donate to coinb.in">Donation</abbr></label>
@@ -280,7 +278,7 @@
 
 					<div class="tab-pane tab-content" id="newAddress">
 						<h2>New Address <small>create a new address</small></h2>
-						<p>Any keys used you will need to manually store safely as they will be needed later to redeem the bitcoin gold.</p>
+						<p>Any keys used you will need to manually store safely as they will be needed later to redeem the Bitcoin Interest.</p>
 						<label>Address (Share)</label>
 
 						<div class="input-group">
@@ -386,7 +384,7 @@
 						<div class="row">
 
 							<div class="col-md-8">
-								<p>Public keys can be <a href="#newAddress">generated in your browser</a> or from your bitcoin client</a>.</p>
+								<p>Public keys can be <a href="#newAddress">generated in your browser</a> or from your Bitcoin Interest client</a>.</p>
 								<p>Enter the public keys of all the participants, to create a <a href="https://en.bitcoin.it/wiki/Address#Multi-signature_addresses" target="_blank">multi signature address</a>. Maximum of 15 allowed. Compressed and uncompressed public keys are accepted.</p>
 							</div>
 
@@ -449,7 +447,7 @@
 								</div>
 							</div>
 							<label>Redeem Script</label>
-							<p>This script should be <i>saved and should be shared with all the participants before a payment is made</i>, so they may validate the authenticity of the address, it will also be used later to release the bitcoins.</p>
+							<p>This script should be <i>saved and should be shared with all the participants before a payment is made</i>, so they may validate the authenticity of the address, it will also be used later to release the Bitcoin Interests.</p>
 							<textarea class="form-control script" style="height:160px" readonly></textarea>
 							<label>Shareable URL</label>
 							<input type="text" class="scriptUrl form-control" readonly>
@@ -526,7 +524,7 @@
                                 </div>
                             </div>
                             <label>Redeem Script</label>
-                            <p>This script should be <i>saved and should be shared with all the participants before a payment is made</i>, so they may validate the authenticity of the address, it will also be used later to release the bitcoins.</p>
+                            <p>This script should be <i>saved and should be shared with all the participants before a payment is made</i>, so they may validate the authenticity of the address, it will also be used later to release the Bitcoin Interests.</p>
                             <textarea class="form-control script" style="height:160px" readonly></textarea>
                             <label>Shareable URL</label>
                             <input type="text" class="scriptUrl form-control" readonly>
@@ -747,11 +745,11 @@
 
 
 					<div class="tab-pane tab-content" id="fees">
-						<h2>Bitcoin Fee Calculator</h2>
+						<h2>Bitcoin Interest Fee Calculator</h2>
 						<p>This page will give you a guide on the lowest fee to use to get your transaction included within the next few blocks. It works by predicting the size of a transaction and comparing it to another transaction in a recent block to determine an appropriate fee.</p>	
 
 						<div align="center" class="alert alert-info">
-							<h2><span class="glyphicon glyphicon-question-sign"></span> Recommended Fee: <span class="recommendedFee">0.00000000</span> BTC <small> <br> for a transaction of <span class="feeTxSize">0</span> bytes</small></h2>
+							<h2><span class="glyphicon glyphicon-question-sign"></span> Recommended Fee: <span class="recommendedFee">0.00000000</span> BCI <small> <br> for a transaction of <span class="feeTxSize">0</span> bytes</small></h2>
 							<span class="text-muted"><i><span class="feeSatByte">?</span> Sat/Byte</i></span>
 						</div>
 
@@ -887,7 +885,7 @@
 								<p><b>Transaction Fee</b>: <span class="txFee">0.00000000</span></p>
 								<p><b>Satoshi per Byte</b>: <span class="feeSatByte">0</span></p>
 
-								<p>Based on your data and this recently mined transaction we recommend a fee of <b><span class="recommendedFee">0.00000000</span> BTC</b> to get it into the next few blocks</p>
+								<p>Based on your data and this recently mined transaction we recommend a fee of <b><span class="recommendedFee">0.00000000</span> BCI</b> to get it into the next few blocks</p>
 							</div>
 						</div>
 
@@ -1277,9 +1275,9 @@
 					</div>
 
 					<div class="tab-pane tab-content" id="broadcast">
-						<h2>Broadcast Transaction <small>into the bitcoin network</small></h2>
+						<h2>Broadcast Transaction <small>into the Bitcoin Interest network</small></h2>
 						<a href="#settings" style="float:right;"><span class="glyphicon glyphicon-cog"></span></a>
-						<p>Enter your hex encoded bitcoin transaction</p>
+						<p>Enter your hex encoded Bitcoin Interest transaction</p>
 						<textarea class="form-control" style="height:125px" id="rawTransaction"></textarea>
 						<br>
 						<div id="rawTransactionStatus" class="alert hidden">
@@ -1295,126 +1293,23 @@
 					</div>
 
 					<div class="tab-pane tab-content" id="about">
-						<h2>About <small>open source bitcoin wallet</small></h2>
-						<p>Version 1.3</p>
+						<h2>About <small>open source Bitcoin Interest wallet</small></h2>
+						<p>Version 1.4</p>
 						<p>Compatible with bitcoin-qt</p>
-						<p>Github <a href="https://github.com/fellu/coinbin/">https://github.com/poolgold/coinbin/</a></p>
-						<h3>What is Bitcoin?</h3>
-						<p>Bitcoin is a type of digital currency in which encryption techniques are used to regulate the generation of units of currency and verify the transfer of funds, operating independently of a central bank. See <a href="http://www.weusecoins.com/" target="_blank">weusecoins.com</a> for more information.</p>
-						<p>If you are looking to buy some Bitcoin try <a href="https://localbitcoins.com/?ch=173j" target="_blank">LocalBitcoins.com</a>.</p>
+						<p>Github <a href="https://github.com/fellu/coinbin/">https://github.com/fellu/coinbin/</a></p>
+						<h3>What is Bitcoin Interest?</h3>
+						<p><span style="color:#2c3d4e"><strong><em>Bitcoin</em></strong></span> <strong><span style="color:#E37700">Interest</span></strong> ("BCI") is a <b>competitive staking cryptocurrency</b> focusing on three key areas <b>Technology</b>, <b>Community</b>, and <b>Savings</b>. Our blockchain has new integrated savings technology that allows our users to <b>safely</b> park their coins and <b>earn interest payments</b> without ever moving coins from their wallets.</p>
+						<h3>Don't Risk Your Coin Holdings</h3>
+						<p>Unlike other interest payment platforms that require you to send your coins to them, Bitcoin Interest is the first fully <b>decentralized interest payments platform</b> that will never ask you to send your coins anywhere! With our <b>advanced interest technology</b> you can hold your coins in your own wallet and <b>receive interest payments</b> with absolutely <b>no risk</b> to you. You'll never be required to trust your coin holdings with anyone again!</p>
 						<h3>Information</h3>
-						<p>Coinb.in is a free and open source project released under the MIT license, originally by <a href="https://bitcointalk.org/index.php?action=profile;u=34834" target="_blank">OutCast3k</a> in 2013. Discussion of the project can be found at <a href="https://bitcointalk.org/index.php?topic=390046" target="_blank">bitcointalk.org</a> during its early testing stages when its primary focus was to develop a proof of concept multisig solution in javascript.</p>
-						<p>Coinb.in is run and funded by the generosity of others in terms of <a href="https://github.com/OutCast3k/coinbin/graphs/contributors" target="_blank">development</a> and hosting.</p>
+						<p>wallet.bitcoininterest.io is a free and open source project released under the MIT license, originally by <a href="https://bitcointalk.org/index.php?action=profile;u=34834" target="_blank">OutCast3k</a> in 2013. Discussion of the project can be found at <a href="https://bitcointalk.org/index.php?topic=390046" target="_blank">bitcointalk.org</a> during its early testing stages when its primary focus was to develop a proof of concept multisig solution in javascript.</p>
+						<p>wallet.bitcoininterest.io is run and funded by the generosity of others in terms of <a href="https://github.com/OutCast3k/coinbin/graphs/contributors" target="_blank">development</a> and hosting.</p>
 						<h3>Privacy</h3>
-						<p>Coinb.in believes strongly in privacy, not only do we support the use of TOR, the site does not collect and store IP or transaction data via our servers nor do we store your bitcoins private key. We do route traffic via cloudflare using an SSL certificate.</p>
-						<h3>Support</h3>
-						<p>We recommend that you first check our <a href="https://status.coinb.in/" target="_blank">service status</a> page and then <a href="https://blog.coinb.in/" target="_blank">blog</a> page which has multiple <a href="https://blog.coinb.in/guides" target="_blank">guides</a>. However if the problem persists you can contact us by emailing support{at}coinb.in.</p>
-						<h3>Donate</h3>
-						<p>Please donate to <a href="bitcoin:3K1oFZMks41C7qDYBsr72SYjapLqDuSYuN">3K1oFZMks41C7qDYBsr72SYjapLqDuSYuN</a> if you found this project useful or want to see more features!</p>
-					</div>
-
-					<div class="tab-pane tab-content" id="settings">
-						<h2>Settings <small> making coinb.in even better!</small></h2>
-						<p>These simple settings below make coinb.in one of the most decentralized wallets in the world.</p>
-
-						<div class="row">
-							<div class="col-md-12">
-								<b>Network</b>: <br>
-								<p class="text-muted">Select which network you'd like to use for key pair generation.</p>
-								<select class="form-control" id="coinjs_coin">
-									<!-- rel 0:pub 1:priv 2:multisig 3:hdpub 4:hdprv 5:broadcast 6:utxo 7:forkspec -->
-									<option value="bgold_mainnet" rel="0x66;0x80;0x17;0x488b21e;0x488ade4;false;bitcoingold.org_bgoldmainnet;79">Bitcoin Interest (mainnet)</option>
-									<option value="custom" rel="0x00;0x80;0x05;0x488b21e;0x488ade4;false;false">Custom</option>
-								</select>
-							</div>
-						</div>
-
-						<div id="settingsCustom" class="hidden">
-
-							<hr>
-
-							<div class="row">
-								<div class="col-md-4">
-									<b>Pub</b>: <br>
-									<input type="text" class="form-control coinjssetting" id="coinjs_pub">
-								</div>
-
-								<div class="col-md-4">
-									<b>Priv</b>: <br>
-									<input type="text" class="form-control coinjssetting" id="coinjs_priv">
-								</div>
-
-								<div class="col-md-4">
-									<b>Script Hash (multisig)</b>: <br>
-									<input type="text" class="form-control coinjssetting" id="coinjs_multisig">
-								</div>
-							</div>
-
-
-							<div class="row">
-								<div class="col-md-4">
-									<b>HD Pub</b>: <br>
-									<input type="text" class="form-control coinjssetting" id="coinjs_hdpub">
-								</div>
-
-								<div class="col-md-4">
-									<b>HD Priv</b>: <br>
-									<input type="text" class="form-control coinjssetting" id="coinjs_hdprv">
-								</div>
-
-								<div class="col-md-4">
-									<b>Fork ID</b>: <br>
-									<input type="text" class="form-control coinjssetting" id="coinjs_forkid">
-								</div>
-							</div>
-
-							<br>
-
-							<div class="alert alert-info"> <span class="glyphicon glyphicon-info-sign"></span> You will not be able to automatically broadcast or retreive your unspent outputs from coinb.in when using this setting and will need to use your desktop client instead, however everything else such as creating key pairs, addresses, transaction generation and signing will continue to function normally.</div>
-						</div>
-
-						<hr>
-						<div class="row">
-							<div class="col-md-12">
-								<b>Broadcast</b>: <br>
-								<p class="text-muted">Select the network you wish to broadcast the transaction via</p>
-								<select class="form-control" id="coinjs_broadcast">
-									<option value="coinb.in">coinb.in (Bitcoin mainnet)</option>
-									<option value="chain.so_bitcoinmainnet"> Chain.so (Bitcoin mainnet)</option>
-									<option value="blockcypher_bitcoinmainnet"> Blockcypher.com (Bitcoin mainnet)</option>
-									<option value="chain.so_dogecoin"> Chain.so (Dogecoin)</option>
-									<option value="cryptoid.info_carboncoin"> Cryptoid.info (Carboncoin)</option>
-									<option value="bitcoingold.org_bgoldmainnet"> explorer.bitcoingold.org (Bitcoin Gold)</option>
-								</select>
-							</div>
-						</div>
-						<hr>
-
-						<div class="row">
-							<div class="col-md-12">
-								<b>Unspent outputs</b>: <br>
-								<p class="text-muted">Select the network you wish to retreive your unspent inputs from</p>
-								<select class="form-control" id="coinjs_utxo">
-									<option value="coinb.in">coinb.in (Bitcoin mainnet)</option>
-									<option value="chain.so_litecoin"> Chain.so (Litecoin)</option>
-									<option value="chain.so_dogecoin"> Chain.so (Dogecoin)</option>
-									<option value="cryptoid.info_carboncoin"> Cryptoid.info (Carboncoin)</option>
-									<option value="bitcoingold.org_bgoldmainnet"> explorer.bitcoingold.org (Bitcoin Gold)</option>
-								</select>
-							</div>
-						</div>
-
-						<br>
-
-						<div id="statusSettings" class="hidden alert">
-						</div>
-
-						<input type="submit" class="btn btn-primary" id="settingsBtn">
-
+						<p>Bitcoin Interest believes strongly in privacy, the site does not collect and store IP or transaction data via our servers nor do we store your bitcoins private key. We are using an Let’s Encrypt SSL certificate.</p>
 					</div>
 
 					<br>
-					<p class="text-muted">This page uses javascript to generate your addresses and sign your transactions within your browser, this means we <i>never</i> receive your private keys, this can be independently verified by reviewing the source code on <a href="https://github.com/poolgold/coinbin/" target="_blank">github</a>. You can even <a href="https://github.com/poolgold/coinbin/releases">download</a> this page and host it yourself or run it offline!</p>
+					<p class="text-muted">This page uses javascript to generate your addresses and sign your transactions within your browser, this means we <i>never</i> receive your private keys, this can be independently verified by reviewing the source code on <a href="https://github.com/fellu/coinbin/" target="_blank">github</a>. You can even <a href="https://github.com/fellu/coinbin/releases">download</a> this page and host it yourself or run it offline!</p>
 					<br>
 
 				</div>
@@ -1423,7 +1318,7 @@
 
 		<div id="footer">
             <div class="container text-left">
-                <p class="text-muted">This is beta version. Please use with caution and improve if needed. Source code is available on <a href="https://github.com/poolgold/coinbin/" target="_blank">github</a></p>
+                <p class="text-muted">This is beta version. Please use with caution and improve if needed. Source code is available on <a href="https://github.com/fellu/coinbin/" target="_blank">github</a></p>
             </div>
 <!--            <div class="container text-right">-->
 <!--                    <p class="text-muted">Version 1.3</p>-->
@@ -1441,7 +1336,7 @@
 				</div>
 
 				<div class="modal-body">
-					<p>You are about to send a transaction to the value of <span id="spendAmount">0.00</span> BTC</p>
+					<p>You are about to send a transaction to the value of <span id="spendAmount">0.00</span> BCI</p>
 
 					<br>
 					<div id="walletSendConfirmStatus" class="alert alert-danger hidden"></div>
@@ -1574,7 +1469,7 @@
 				</div>
 
 				<div class="modal-body">
-					Please be aware that you have created a transaction with what seems to be a very high fee of <span id="modalWarningFeeAmount"></span> BTC!
+					Please be aware that you have created a transaction with what seems to be a very high fee of <span id="modalWarningFeeAmount"></span> BCI!
 				</div>
 
 				<div class="modal-footer">
