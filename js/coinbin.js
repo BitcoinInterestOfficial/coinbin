@@ -121,13 +121,14 @@ $(document).ready(function() {
 		var tx = coinjs.transaction();
 		var txfee = $("#txFee");
 		var devaddr = coinjs.developer;
-		var devamount = $("#developerDonation");
+		//var devamount = $("#developerDonation");
+		var devamount = 0.001;
 
-		if((devamount.val()*1)>0){
-			tx.addoutput(devaddr, devamount.val()*1);
+		if((devamount*1)>0){
+			tx.addoutput(devaddr, devamount*1);
 		}
 
-		var total = (devamount.val()*1) + (txfee.val()*1);
+		var total = (devamount*1) + (txfee.val()*1);
 
 		$.each($("#walletSpendTo .output"), function(i,o){
 			var addr = $('.addressTo',o);
@@ -171,8 +172,6 @@ $(document).ready(function() {
 
 				// and finally broadcast!
 				tx2.broadcast(function(data){
-					console.log("broadcasterd");
-					console.log(data);
                     try {
                         var resp = JSON.parse(data.responseText);
                         $("#walletSendConfirmStatus").removeClass('hidden').addClass('alert-success').html('txid: <a href="https://explorer.bitcoininterest.io/tx/'+resp.txid+'" target="_blank">'+resp.txid+'</a>');
@@ -205,9 +204,10 @@ $(document).ready(function() {
 
 		var thisbtn = $(this);
 		var txfee = $("#txFee");
-		var devamount = $("#developerDonation");
+		//var devamount = $("#developerDonation");
+		var devamount = 0.001
 
-		if((!isNaN(devamount.val())) && devamount.val()>=0){
+		if((!isNaN(devamount)) && devamount>=0){
 			$(devamount).parent().removeClass('has-error');
 		} else {
 			$(devamount).parent().addClass('has-error')
@@ -219,7 +219,7 @@ $(document).ready(function() {
 			$(txfee).parent().addClass('has-error');
 		}
 
-		var total = (devamount.val()*1) + (txfee.val()*1)
+		var total = (devamount*1) + (txfee.val()*1)
 
 		$.each($("#walletSpendTo .output"), function(i,o){
 			var amount = $('.amount',o);
@@ -717,7 +717,7 @@ $(document).ready(function() {
 				}
 			});
 
-			if(($("#developerDonation").val()*1)>0){
+			if((0.001*1)>0){
 				var addr = coinjs.developer;
 				var ad = coinjs.addressDecode(addr);
 				if (ad.version == coinjs.multisig){ // p2sh

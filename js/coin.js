@@ -19,7 +19,7 @@
 	coinjs.compressed = false;
 
 	/* other vars */
-	coinjs.developer = 'i8LfuQQq78gZSPf5WRouEDGkWLuqicuTP8'; // BCI
+	coinjs.developer = 'iSUHXuxQgm88xnsj8pg8qyBN4G22NSNNar'; // BCI
 
 	coinjs.host = 'https://explorer.bitcoininterest.io/api/';
 	coinjs.uid = '1';
