@@ -1574,9 +1574,9 @@ $(document).ready(function() {
 
 	$("#homeBtn").click(function(e){
 		e.preventDefault();
-		history.pushState(null, null, '#home');
+		history.pushState(null, null, '#wallet');
 		$("#header .active, #content .tab-content").removeClass("active");
-		$("#home").addClass("active");
+		$("#wallet").addClass("active");
 	});
 
 	$('a[data-toggle="tab"]').on('click', function(e) {
