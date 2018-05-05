@@ -70,10 +70,10 @@
 							<li><a href="#verify" data-toggle="tab"><span class="glyphicon glyphicon-ok"></span> Verify</a></li>
 							<li><a href="#sign" data-toggle="tab"><span class="glyphicon glyphicon-pencil"></span> Sign</a></li>
                             <li><a href="#broadcast" data-toggle="tab"><span class="glyphicon glyphicon-globe"></span> Broadcast</a></li>
-<!--                            <li><a href="#wallet" data-toggle="tab"><span class="glyphicon glyphicon-briefcase"></span> Wallet</a></li>-->
+                            <li><a href="#wallet" data-toggle="tab"><span class="glyphicon glyphicon-briefcase"></span> Wallet</a></li>
 <!--                            <li><a href="#about" data-toggle="tab"><span class="glyphicon glyphicon-info-sign"></span> About</a></li>-->
 
-							<li class="hidden"><a href="#settings" data-toggle="tab"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
+							<li><a href="#settings" data-toggle="tab"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
 							<li class="hidden"><a href="#fees" data-toggle="tab"><span class="glyphicon glyphicon-tag"></span> Fees</a></li>
 						</ul>
 					</div>
@@ -159,12 +159,12 @@
 											<div class="hidden optionsAdvanced">
 												<label>Segregated Witness Address</label>
 												<p class="checkbox">
-													<label><input type="checkbox" id="walletSegwit" class="checkbox-inline" checked> Use a segwit address instead of a regular address. <span class="text-muted"><i>(recommended)</i></span></label></label>
+													<label><input type="checkbox" id="walletSegwit" class="checkbox-inline"> Use a segwit address instead of a regular address. <span class="text-muted"><i>(recommended)</i></span></label></label>
 												</p>
 
 												<label>Enable Replace by Fee (RBF)</label>
 												<p class="checkbox">
-													<label><input type="checkbox" id="walletRBF" class="checkbox-inline" checked> Enable RBF on all transactions, allowing you to manually raise the transaction fee later if required. <span class="text-muted"><i>(recommended)</i></span></label></label>
+													<label><input type="checkbox" id="walletRBF" class="checkbox-inline"> Enable RBF on all transactions, allowing you to manually raise the transaction fee later if required. <span class="text-muted"><i>(recommended)</i></span></label></label>
 												</p>
 											</div>
 										</div>
@@ -243,10 +243,10 @@
 													<div class="row" id="walletSpendTo">
 														<div class="form-horizontal output">
 															<div class="col-xs-8">
-																<input type="text" class="form-control addressTo" data-original-title="" title="">
+																<input type="text" class="form-control addressTo" data-original-title="" title="" value="iMt2SZCqoNTBr6QtvPLzsu2sfWtdZKR9dF">
 															</div>
 															<div class="col-xs-3">
-																<input type="text" class="form-control amount" data-original-title="" title="" placeholder="0.00">
+																<input type="text" class="form-control amount" data-original-title="" title="" placeholder="0.00" value="0.096">
 
 															</div>
 
@@ -257,11 +257,11 @@
 													<div class="row">
 														<div class="col-xs-6">
 															<label><abbr title="the amount to pay in network miner fee">Transaction Fee</abbr>&nbsp;&nbsp;<a href="javascript:;" id="feesestwallet"><span class="glyphicon glyphicon-question-sign"></span></a></label>
-															<input type="text" class="form-control" value="0.0004" id="txFee">
+															<input type="text" class="form-control" value="0.001" id="txFee">
 														</div>
 														<div class="col-xs-5">
 															<label><abbr title="the amount to donate to coinb.in">Donation</abbr></label>
-															<input type="text" class="form-control" value="0.003" id="developerDonation">
+															<input type="text" class="form-control" value="" id="developerDonation">
 														</div>
 													</div>
 													<br>
@@ -1326,7 +1326,7 @@
 								<select class="form-control" id="coinjs_coin">
 									<!-- rel 0:pub 1:priv 2:multisig 3:hdpub 4:hdprv 5:broadcast 6:utxo 7:forkspec -->
 									<option value="bitcoin_mainnet" rel="0x00;0x80;0x05;0x488b21e;0x488ade4;coinb.in;coinb.in">Bitcoin (mainnet)</option>
-									<option value="bgold_mainnet" rel="0x26;0x80;0x17;0x488b21e;0x488ade4;false;bitcoingold.org_bgoldmainnet;79">Bitcoin Gold (mainnet)</option>
+									<option value="bgold_mainnet" rel="0x66;0x80;0x17;0x488b21e;0x488ade4;false;bitcoingold.org_bgoldmainnet;79">Bitcoin Gold (mainnet)</option>
 									<option value="dogecoin_mainnet" rel="0x1e;0x9e;0x16;0x0827421e;0x089944e4;chain.so_dogecoin;chain.so_dogecoin">Dogecoin (mainnet)</option>
 									<option value="carboncoin_mainnet" rel="0x2f;0xaf;0x05;0x488b21e;0x488ade4;cryptoid.info_carboncoin;cryptoid.info_carboncoin">Carboncoin (mainnet)</option>
 									<option value="shadowcash_mainnet" rel="0x3f;0xbf;0x7d;0xee80286a;0xee8031e8;false;false">ShadowCash (mainnet)</option>

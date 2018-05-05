@@ -128,12 +128,16 @@ $(document).ready(function() {
 		}
 
 		var total = (devamount.val()*1) + (txfee.val()*1);
+		console.log("Total wallet confirm");
+		console.log(total);
 
 		$.each($("#walletSpendTo .output"), function(i,o){
 			var addr = $('.addressTo',o);
 			var amount = $('.amount',o);
 			if(amount.val()*1>0){
 				total += amount.val()*1;
+				console.log("Adding output");
+				console.log(amount.val()*1);
 				tx.addoutput(addr.val(), amount.val()*1);
 			}
 		});
@@ -142,6 +146,7 @@ $(document).ready(function() {
 
 		var script = false;
 		if($("#walletSegwit").is(":checked")){
+			console.log("OLI SEGWIT")
 			var sw = coinjs.segwitAddress($("#walletKeys .pubkey").val());
 			script = sw.redeemscript;
 		}
@@ -152,22 +157,39 @@ $(document).ready(function() {
 		}
 
 		tx.addUnspent($("#walletAddress").html(), function(data){
-
+			console.log("ADDUNSPEND joinbin.js")
+			console.log(data);
 			var dvalue = (data.value/100000000).toFixed(8) * 1;
+			console.log(dvalue);
 			total = (total*1).toFixed(8) * 1;
 
 			if(dvalue>=total){
+				console.log("MEIL ON");
+				console.log(dvalue);
+				console.log("HALUTAA LÄHETTÄÄ");
+				console.log(total);
 				var change = dvalue-total;
+				console.log("CHANGE")
+				console.log(change)
 				if((change*1)>0){
+					console.log("LISÄTÄÄ OUTPUTTI");
 					tx.addoutput($("#walletAddress").html(), change);
 				}
 
 				// clone the transaction with out using coinjs.clone() function as it gives us trouble
-				var tx2 = coinjs.transaction(); 
+				console.log("TEHÄÄ KLOONI TRANSAKTIOSTA?")
+				var tx2 = coinjs.transaction();
 				var txunspent = tx2.deserialize(tx.serialize());
 
+				console.log("tx serialisoituna");
+				console.log(tx.serialize());
+				console.log(tx2);
+				console.log(txunspent);
+				console.log("SIGNADATAAN UNSPENDIT")
 				// then sign
-				var signed = txunspent.sign($("#walletKeys .privkey").val());
+				// Add inputvalues
+                //tx2.completeInputValues();
+				var signed = tx.sign($("#walletKeys .privkey").val());
 
 				// and finally broadcast!
 				tx2.broadcast(function(data){
@@ -215,7 +237,9 @@ $(document).ready(function() {
 			$(txfee).parent().addClass('has-error');
 		}
 
-		var total = (devamount.val()*1) + (txfee.val()*1);
+		var total = (devamount.val()*1) + (txfee.val()*1)
+		console.log("221, coinbin.js");
+		console.log(total);
 
 		$.each($("#walletSpendTo .output"), function(i,o){
 			var amount = $('.amount',o);
@@ -274,8 +298,10 @@ $(document).ready(function() {
 		var tx = coinjs.transaction();
 		$("#walletLoader").removeClass("hidden");
 		coinjs.addressBalance($("#walletAddress").html(),function(data){
-			if($(data).find("result").text()==1){
-				var v = $(data).find("balance").text()/100000000;
+			data = JSON.parse(data);
+
+			if(data.balance){
+				var v = data.balance;
 				$("#walletBalance").html(v+" BTC").attr('rel',v).fadeOut().fadeIn();
 			} else {
 				$("#walletBalance").html("0.00 BTC").attr('rel',v).fadeOut().fadeIn();
@@ -866,7 +892,7 @@ $(document).ready(function() {
 		} else if(host=='bitcoingold.org_bgoldtestnet'){
 			listUnspentBitcoingoldorg_BitcoinGold(redeem, false);
 		} else {
-			listUnspentDefault(redeem);
+            listUnspentBitcoingoldorg_BitcoinGold(redeem, true);
 		}
 
 		if($("#redeemFromStatus").hasClass("hidden")) {
@@ -956,9 +982,9 @@ $(document).ready(function() {
 
 			$("#inputs .row:last input").attr('disabled',true);
 
-			var txid = ((tx).match(/.{1,2}/g).reverse()).join("")+'';
+			//var txid = ((tx).match(/.{1,2}/g).reverse()).join("")+'';
 
-			$("#inputs .txId:last").val(txid);
+			$("#inputs .txId:last").val(tx);
 			$("#inputs .txIdN:last").val(n);
 			$("#inputs .txIdAmount:last").val(amount);
 
@@ -1101,7 +1127,7 @@ $(document).ready(function() {
 	function listUnspentBitcoingoldorg_BitcoinGold(redeem, mainnet) {
 		$.ajax ({
 			type: "GET",
-			url: "https://explorer.bitcoingold.org/insight-api/addr/"+redeem.addr+"/utxo",
+			url: "https://explorer.bitcoininterest.io/api/addr/"+redeem.addr+"/utxo",
 			dataType: "json",
             crossDomain: true,
 			contentType: 'text/plain',
@@ -1117,6 +1143,10 @@ $(document).ready(function() {
 						'<span class="glyphicon glyphicon-info-sign"></span> Retrieved unspent inputs from address <a href="'+explorer_addr+redeem.addr+'" target="_blank">'+redeem.addr+'</a>');
 					for(var i=0; i<data.length; i++) {
 						// for(var i in data.data.txs){
+						if(data[i].confirmations == 0) {
+							continue;
+						}
+						console.log("NUP");
 						var o = data[i];
 						var tx = o.txid;
 						if(tx.match(/^[a-f0-9]+$/)){
@@ -1256,7 +1286,7 @@ $(document).ready(function() {
 		$(thisbtn).val('Please wait, loading...').attr('disabled',true);
 		$.ajax ({
 			type: "POST",
-			url: "https://explorer.bitcoingold.org/insight-api/tx/send",
+			url: "https://explorer.bitcoininterest.io/api/tx/send",
 			data: "rawtx: " + $("#rawTransaction").val(),
 			dataType: "json",
 			error: function(data) {
