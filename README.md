@@ -1,27 +1,13 @@
 coinbin
 =======
 
-### None of the developers bare responsibility if a user got scammed. By using this software you are agreeing to bare all the responsibility if you lose funds. The code is open source and can be checked each time when you open a site using this code. We do suggest you to do so!
-
-## Tasks:
-
-- [x] Change wallet symbols for making it compatible to BTG
-
-- [x] Rebrand the UX
-
-- [ ] Add transaction signing with replay protection
-
-- [ ] Add beaming raw transaction to node
-
-- [ ] Uncomment and improve existion features
-
-A Open Source Browser Based Bitcoin Wallet. Version 1.3 beta by OutCast3k
+A Open Source Browser Based Bitcoin Interest Wallet. Version 1.4
 
 Live version available at https://wallet.bitcoininterest.io/
 
-Github URL: https://github.com/fellu/coinbin
+Github URL: https://github.com/BitcoinInterestOfficial/coinbin
 
-Coinb.in supports a number of key features such as: 
+Wallet supports a number of key features such as:
 
 - Offline Compressed & uncompressed Address creation.
 - Offline Multisignature Address creation.
@@ -42,7 +28,4 @@ Coinb.in supports a number of key features such as:
 - HD (bip32) support
 - Supports altcoins such as litecoin
 - Replace by fee (RBF) Support
-- Segwit Support
-- Fee calculator - https://coinb.in/#fees
-
-Donate to 3K1oFZMks41C7qDYBsr72SYjapLqDuSYuN to see more development!
+- Using Insight API as backend for wallet
