@@ -3,12 +3,115 @@ html, body {
 }
 
 body {
-	background-color:#ffffff;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Carter One', cursive;
+}
+
+hr { border-color: #2c3d4e; }
+
+a {
+	color: #2c3d4e;
+}
+a:hover {
+	color: #e57800;
+}
+:-webkit-autofill,
+:-webkit-autofill:hover, 
+:-webkit-autofill:focus {
+	background: #e57800 !important;
+	background-color: #e57800 !important;
+	color: #FFFFFF !important;
+	-webkit-box-shadow: 0 0 0px 1000px #e57800 inset;
+	-webkit-text-fill-color: #FFFFFF;
 }
 
 .displaynone {
 	display:none;
 }
+
+.orange { color: #e57800; }
+.blue { color: #2c3d4e; }
+
+.btn {
+	font-family: 'Carter One', cursive;
+}
+	.btn.btn-primary {
+		font-size: 18px;
+		background: #e57800;
+		border: none;
+	}
+
+.navbar-brand {
+	padding: 12px 10px;
+}
+.navbar-default {
+	background: #FFFFFF;
+	border: none;
+	border-radius: 0;
+	border-top: 2px solid #2c3d4e;
+	border-bottom: 2px solid #2c3d4e;
+}
+.navbar-default .navbar-nav>li>a {
+	color : #2c3d4e;
+}
+
+.text-muted {
+}
+	.text-muted a {
+		border-bottom: 1px dashed;
+	}
+	.text-muted a:hover {
+		text-decoration: none;
+		border-bottom: 1px solid;
+	}
+
+.imptitle {
+	margin: 0px 0 0 0;
+	padding: 10px 20px;
+	background: #2c3d4e;
+	color: #FFFFFF;
+}
+	
+.bciwarn {
+	background: #e57800;
+	color: #FFFFFF;
+	padding: 20px 20px;
+}
+	.bciwarn span { color: #FFFFFF; }	
+
+#openLogin {
+
+}
+	.optionsAdvanced  {
+		padding: 5px 10px;
+	}
+	#openLogin .input-group-addon {
+		color: #FFFFFF;
+		background: #2c3d4e;
+		border: none;
+	}
+	#openLogin input[type="email"], #openLogin input[type="password"] {
+		color: #FFFFFF;
+		background: #2c3d4e;
+		border: none;
+	}
+	#openLogin input[type="email"]::placeholder, #openLogin input[type="password"]::placeholder {
+		color: #FFFFFF;
+	}
+
+	#openLogin .optionsCollapse {
+		font-family: 'Carter One', cursive;
+	}
+	#openLogin .well {
+		color: #2c3d4e;
+		background: #FFFFFF;
+		border: none;
+		box-shadow: none;
+	}
 
 #wrap {
 	min-height: 100%;
@@ -118,3 +221,83 @@ body {
 #fees .total {
 	font-size: 100px;
 }
+
+.loginwelcome {
+	display: block;
+	margin-top: 0;
+	margin-bottom: 10px;
+	font-size: 14px;
+	color: #e57800;
+}
+#walletbox {
+	position: relative;
+}
+	#walletbox #walletLoader {
+		/*position: absolute;
+		left: 50%;
+		top: 50%;*/
+		float: left;
+	}
+	#walletbox #walletAddress {
+		display: block;
+		margin-top: 5px;
+		padding: 4px;
+		font-size: 13px;
+		border: 1px dashed;
+	}
+
+#walletbalanceholder {
+	position: relative;
+	overflow: hidden;
+	margin-top: 10px;
+	padding: 5px;
+	color: #FFFFFF;
+	background: #e57800;
+	text-align: center;
+}
+	#walletbalanceholder a {
+		color: #FFFFFF;
+		font-family: 'Carter One', cursive;
+	}
+	#walletbalanceholder #walletLoader {
+		position :absolute;
+		top: 5px;
+		left: 5px;
+	}
+	#walletbalanceholder .glyphicon {
+		position :absolute;
+		top: 10px;
+		right: 5px;
+	}
+	
+
+#wallmenu {
+	list-style-type: none;
+	margin: 10px 0 0 0;
+	padding: 10px;
+	font-family: 'Carter One', cursive;
+	background: #2c3d4e;
+}
+	#wallmenu li {
+		display: block;
+	}
+	#wallmenu li a {
+		display: block;
+		padding: 10px;
+		color: #FFFFFF;
+		-webkit-transition: .2s;
+		transition: all .2s;
+	}
+		#wallmenu li a:hover, #wallmenu li a:active, #wallmenu li a:focus {
+			text-decoration: none;
+			background: #e57800;
+		}
+	#wallmenu li a .glyphicon {
+		margin-right: 10px;
+	}
+
+#walletKeys {}
+	#walletKeys label {
+		display: block;
+		margin-top: 20px;
+	}
