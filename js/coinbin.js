@@ -167,11 +167,11 @@ $(document).ready(function() {
 				var txunspent = tx2.deserialize(tx.serialize());
 				// then sign
 				// Add inputvalues
-                //tx2.completeInputValues();
+                ///tx2.completeInputValues();
 				var signed = tx.sign($("#walletKeys .privkey").val());
 
 				// and finally broadcast!
-				tx2.broadcast(function(data){
+                tx2.broadcast(function(data){
                     try {
                         var resp = JSON.parse(data.responseText);
                         $("#walletSendConfirmStatus").removeClass('hidden').addClass('alert-success').html('txid: <a href="https://explorer.bitcoininterest.io/tx/'+resp.txid+'" target="_blank">'+resp.txid+'</a>');
@@ -616,7 +616,8 @@ $(document).ready(function() {
 					estimatedTxSize += 147
 				}
 
-				var value = parseInt($(".txIdAmount", o).val() * 1e8);
+				//var value = parseInt($(".txIdAmount", o).val() * 1e8);
+				var value = parseInt($(".txIdAmount", o).val().toString().replace(".",""));
 				tx.addinput($(".txId",o).val(), $(".txIdN",o).val(), $(".txIdScript",o).val(), seq, value);
 			} else {
 				$('#putTabs a[href="#txinputs"]').attr('style','color:#a94442;');

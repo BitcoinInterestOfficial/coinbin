@@ -810,6 +810,8 @@
 			o.sequence = sequence || ((r.lock_time==0) ? 4294967295 : 0);
 			console.assert(value, 'Missing input value');
 			o.value = value;
+			//console.log(value);
+			//console.log(o);
 			return this.ins.push(o);
 		}
 
@@ -905,10 +907,11 @@
                     var scr = script || tx_data[i].scriptPubKey;
 
                     var seq = sequence || false;
-                    var value = tx_data[i].amount*100000000;
+                    var value = tx_data[i].satoshis;
+                    //console.log(value);
 
 					self.addinput(txhash, n, scr, seq, value);
-                    total_value += tx_data[i].amount*100000000;
+                    total_value += tx_data[i].satoshis;
                     total++;
                 }
 
@@ -918,6 +921,8 @@
 				return callback(x);
 			});
 		}
+
+		//console.log(r);
 
 		/* add unspent and sign */
 		r.addUnspentAndSign = function(wif, callback){
