@@ -55,6 +55,7 @@ $(document).ready(function() {
 					$("#walletKeys .pubkey").val(pubkey);
 					$("#walletKeys .privkeyaes").val(privkeyaes);
 
+					$("#introbox").hide();
 					$("#openLogin").hide();
 					$("#openWallet").removeClass("hidden").show();
 
@@ -78,6 +79,7 @@ $(document).ready(function() {
 		$("#openPass").val("");
 		$("#openPassConfirm").val("");
 
+		$("#introbox").show();
 		$("#openLogin").show();
 		$("#openWallet").addClass("hidden").show();
 
@@ -1113,12 +1115,12 @@ $(document).ready(function() {
 	}
 
 	$(".optionsCollapse").click(function(){
-		if($(".optionsAdvanced",$(this).parent()).hasClass('hidden')){
-			$(".glyphcollapse",$(this).parent()).removeClass('glyphicon-collapse-down').addClass('glyphicon-collapse-up');
-			$(".optionsAdvanced",$(this).parent()).removeClass("hidden");
+		if($(".optionsAdvanced.login").hasClass('hidden')){
+			$("#glyphcollapse").removeClass('glyphicon-collapse-down').addClass('glyphicon-collapse-up');
+			$(".optionsAdvanced.login").removeClass("hidden");
 		} else {
-			$(".glyphcollapse",$(this).parent()).removeClass('glyphicon-collapse-up').addClass('glyphicon-collapse-down');
-			$(".optionsAdvanced",$(this).parent()).addClass("hidden");
+			$("#glyphcollapse").removeClass('glyphicon-collapse-up').addClass('glyphicon-collapse-down');
+			$(".optionsAdvanced.login").addClass("hidden");
 		}
 	});
 

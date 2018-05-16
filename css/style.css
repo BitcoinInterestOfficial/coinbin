@@ -1,14 +1,174 @@
+/* latin */
+@font-face {
+  font-family: 'Carter One';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Carter One'), local('CarterOne'), url(../fonts/q5uCsoe5IOB2-pXv9UcNExN8hA.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Ubuntu Light'), local('Ubuntu-Light'), url(../fonts/4iCv6KVjbNBYlgoC1CzjvWyNL4U.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Ubuntu Light'), local('Ubuntu-Light'), url(../fonts/4iCv6KVjbNBYlgoC1CzjtGyNL4U.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Ubuntu Light'), local('Ubuntu-Light'), url(../fonts/4iCv6KVjbNBYlgoC1CzjvGyNL4U.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Ubuntu Light'), local('Ubuntu-Light'), url(../fonts/4iCv6KVjbNBYlgoC1Czjs2yNL4U.woff2) format('woff2');
+  unicode-range: U+0370-03FF;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Ubuntu Light'), local('Ubuntu-Light'), url(../fonts/4iCv6KVjbNBYlgoC1CzjvmyNL4U.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Ubuntu Light'), local('Ubuntu-Light'), url(../fonts/4iCv6KVjbNBYlgoC1CzjsGyN.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 html, body {
 	height: 100%;
 }
 
 body {
-	background-color:#ffffff;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Carter One', cursive;
+}
+
+hr { border-color: #2c3d4e; }
+
+a {
+	color: #2c3d4e;
+}
+a:hover {
+	color: #e57800;
+}
+:-webkit-autofill,
+:-webkit-autofill:hover, 
+:-webkit-autofill:focus {
+	background: #e57800 !important;
+	background-color: #e57800 !important;
+	color: #FFFFFF !important;
+	-webkit-box-shadow: 0 0 0px 1000px #e57800 inset;
+	-webkit-text-fill-color: #FFFFFF;
 }
 
 .displaynone {
 	display:none;
 }
+
+.orange { color: #e57800; }
+.blue { color: #2c3d4e; }
+
+.btn {
+	font-family: 'Carter One', cursive;
+}
+	.btn.btn-primary {
+		font-size: 18px;
+		background: #e57800;
+		border: none;
+	}
+
+.navbar-brand {
+	padding: 12px 10px;
+}
+.navbar-default {
+	background: #FFFFFF;
+	border: none;
+	border-radius: 0;
+	border-top: 2px solid #2c3d4e;
+	border-bottom: 2px solid #2c3d4e;
+}
+.navbar-default .navbar-nav>li>a {
+	color : #2c3d4e;
+}
+
+.text-muted {
+}
+	.text-muted a {
+		border-bottom: 1px dashed;
+	}
+	.text-muted a:hover {
+		text-decoration: none;
+		border-bottom: 1px solid;
+	}
+
+.imptitle {
+	margin: 0px 0 0 0;
+	padding: 10px 20px;
+	background: #2c3d4e;
+	color: #FFFFFF;
+}
+	
+.bciwarn {
+	background: #e57800;
+	color: #FFFFFF;
+	padding: 20px 20px;
+}
+	.bciwarn span { color: #FFFFFF; }	
+
+#openLogin {
+
+}
+	.optionsAdvanced  {
+		padding: 5px 10px;
+	}
+	#openLogin .input-group-addon {
+		color: #FFFFFF;
+		background: #2c3d4e;
+		border: none;
+	}
+	#openLogin input[type="email"], #openLogin input[type="password"] {
+		color: #FFFFFF;
+		background: #2c3d4e;
+		border: none;
+	}
+	#openLogin input[type="email"]::placeholder, #openLogin input[type="password"]::placeholder {
+		color: #FFFFFF;
+	}
+
+	#openLogin .optionsCollapse {
+		font-family: 'Carter One', cursive;
+	}
+	#openLogin .well {
+		color: #2c3d4e;
+		background: #FFFFFF;
+		border: none;
+		box-shadow: none;
+	}
 
 #wrap {
 	min-height: 100%;
@@ -118,3 +278,83 @@ body {
 #fees .total {
 	font-size: 100px;
 }
+
+.loginwelcome {
+	display: block;
+	margin-top: 0;
+	margin-bottom: 10px;
+	font-size: 14px;
+	color: #e57800;
+}
+#walletbox {
+	position: relative;
+}
+	#walletbox #walletLoader {
+		/*position: absolute;
+		left: 50%;
+		top: 50%;*/
+		float: left;
+	}
+	#walletbox #walletAddress {
+		display: block;
+		margin-top: 5px;
+		padding: 4px;
+		font-size: 13px;
+		border: 1px dashed;
+	}
+
+#walletbalanceholder {
+	position: relative;
+	overflow: hidden;
+	margin-top: 10px;
+	padding: 5px;
+	color: #FFFFFF;
+	background: #e57800;
+	text-align: center;
+}
+	#walletbalanceholder a {
+		color: #FFFFFF;
+		font-family: 'Carter One', cursive;
+	}
+	#walletbalanceholder #walletLoader {
+		position :absolute;
+		top: 5px;
+		left: 5px;
+	}
+	#walletbalanceholder .glyphicon {
+		position :absolute;
+		top: 10px;
+		right: 5px;
+	}
+	
+
+#wallmenu {
+	list-style-type: none;
+	margin: 10px 0 0 0;
+	padding: 10px;
+	font-family: 'Carter One', cursive;
+	background: #2c3d4e;
+}
+	#wallmenu li {
+		display: block;
+	}
+	#wallmenu li a {
+		display: block;
+		padding: 10px;
+		color: #FFFFFF;
+		-webkit-transition: .2s;
+		transition: all .2s;
+	}
+		#wallmenu li a:hover, #wallmenu li a:active, #wallmenu li a:focus {
+			text-decoration: none;
+			background: #e57800;
+		}
+	#wallmenu li a .glyphicon {
+		margin-right: 10px;
+	}
+
+#walletKeys {}
+	#walletKeys label {
+		display: block;
+		margin-top: 20px;
+	}
