@@ -1039,11 +1039,11 @@
 			var extract = this.extractScriptKey(index);
 
 			if(!coinjs.useForkId && extract['type'] != 'segwit'){
-				return {'result':0, 'fail':'txtype', 'response':'sighash-witnessv0 is only for sigwit when forkid is not enabled'};
+				return {'result':0, 'fail':'txtype', 'response':'sighash-witnessv0 is only for segwit when forkid is not enabled'};
 			}
 
 			var scriptcode = Crypto.util.hexToBytes(extract['script']);
-			if(extract['type'] == 'sigwit') {
+			if(extract['type'] == 'segwit') {
 				if(scriptcode[0] != 0){
 					return {'result':0, 'fail':'scriptcode', 'response':'redeemscript is not valid'};
 				}
